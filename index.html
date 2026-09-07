@@ -1,1 +1,1361 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeTalksy - Learn Languages. Talk With Confidence.</title>
+    <meta name="description"
+        content="WeTalksy is an interactive language-learning platform focused on vocabulary practice, speaking exercises, pronunciation training, conversation sessions, and progress tracking.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Integrations -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+    <header class="site-header" id="header">
+        <div class="container header-inner">
+            <a href="#home" class="brand-logo" aria-label="WeTalksy Homepage">
+                <img src="assets/images/logo.png" alt="WeTalksy Logo">
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#learn" class="nav-link">Learn</a></li>
+                    <li><a href="#practice" class="nav-link">Practice</a></li>
+                    <li><a href="#talk" class="nav-link">Talk</a></li>
+                    <li><a href="#progress" class="nav-link">Progress</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="mobile-actions-item">
+                        <button class="btn btn-outline btn-sm" id="btnSignInMobile">Sign In</button>
+                        <button class="btn btn-primary btn-sm" id="btnStartMobile">Start Learning</button>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-outline btn-sm header-desktop-btn" id="btnSignIn">Sign In</button>
+                <button class="btn btn-primary btn-sm header-desktop-btn" id="btnStartHeader">Start Learning</button>
+                <button class="mobile-toggle" id="btnMobileToggle" aria-label="Toggle Menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       MENU 1: HOME (3 Sub-Sections: 1. Hero, 2. Why WeTalksy, 3. Community Proof)
+       ========================================================================== -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- Hero Left Content -->
+                <div class="hero-content">
+                    <div class="badge">
+                        <span>⚡</span> Interactive Speaking & Vocab
+                    </div>
+                    <h1 class="hero-title">
+                        Learn Languages.<br>
+                        <span class="highlight">Talk With Confidence.</span>
+                    </h1>
+                    <p class="hero-desc">
+                        WeTalksy helps you master new vocabulary, perfect your accent with real-time audio feedback, and
+                        build natural speaking confidence through immersive everyday conversations.
+                    </p>
+                    <div class="hero-ctas">
+                        <button class="btn btn-primary" id="btnStartHero">Start Learning</button>
+                        <a href="#learn" class="btn btn-outline">Explore Languages</a>
+                    </div>
+                    <div class="hero-stats-row">
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-icon">🔥</div>
+                            <div class="hero-stat-text">
+                                <strong>14 Days</strong>
+                                <span>Active Streak</span>
+                            </div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-icon">💬</div>
+                            <div class="hero-stat-text">
+                                <strong>7 Languages</strong>
+                                <span>Native Voice AI</span>
+                            </div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-icon">🎯</div>
+                            <div class="hero-stat-text">
+                                <strong>94%</strong>
+                                <span>Accuracy Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Mockup UI -->
+                <div class="hero-mockup-wrapper">
+                    <div class="hero-floating-badge badge-top-left">
+                        <span style="font-size:1.3rem;">🎙️</span>
+                        <div>
+                            <strong style="display:block; font-size:0.85rem;">Voice Evaluation</strong>
+                            <span style="font-size:0.75rem; color:var(--color-success); font-weight:700;">Native
+                                Pronunciation!</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-mockup-card">
+                        <div class="hero-mockup-header">
+                            <div class="hero-lang-pills">
+                                <button class="hero-lang-pill active" data-lang="es">Spanish</button>
+                                <button class="hero-lang-pill" data-lang="fr">French</button>
+                                <button class="hero-lang-pill" data-lang="ja">Japanese</button>
+                                <button class="hero-lang-pill" data-lang="de">German</button>
+                            </div>
+                            <div class="streak-pill">
+                                🔥 14 Streak
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Mock Vocab Card -->
+                        <div class="hero-vocab-card">
+                            <div class="vocab-card-top">
+                                <span class="vocab-card-tag">Daily Flashcard</span>
+                                <span style="font-size:0.8rem; color:#A0A59E;">Intermediate B1</span>
+                            </div>
+                            <h3 class="vocab-word-title" id="heroVocabWord">¡Hola! ¿Cómo estás?</h3>
+                            <p class="vocab-phonetic" id="heroVocabPhonetic">/ˈo.la ˈko.mo esˈtas/</p>
+                            <p class="vocab-translation" id="heroVocabTranslation">Hello! How are you?</p>
+
+                            <!-- Waveform -->
+                            <div class="waveform-container">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+
+                            <button class="btn btn-primary btn-sm" style="width:100%; justify-content:center;"
+                                id="btnHeroListen">
+                                🔊 Listen & Practice Voice
+                            </button>
+                        </div>
+
+                        <div class="hero-score-badge">
+                            <div class="score-circle">94%</div>
+                            <div>
+                                <span>Pronunciation Accuracy</span>
+                                <strong style="display:block; font-size:0.8rem; color:var(--color-dark);">Great Accent
+                                    Flow</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-Section 1.2: Why WeTalksy -->
+    <section class="why-section" id="why-wetalksy">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge badge-coral">Built For Real Speech</div>
+                <h2 class="section-title">Why Language Learners Choose WeTalksy</h2>
+                <p class="section-desc">Traditional apps teach you to memorize single words. WeTalksy trains your brain
+                    and mouth to speak in full sentences naturally.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <h3 class="why-title">Immediate Spoken Response</h3>
+                    <p class="why-desc">No boring grammar tables. Practice active sentence production with instant audio
+                        playback and feedback.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🗣️</div>
+                    <h3 class="why-title">Phoneme Accent Feedback</h3>
+                    <p class="why-desc">Our acoustic recognition checks pitch contour, vowel clarity, and stress
+                        placement so you sound natural.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">☕</div>
+                    <h3 class="why-title">Real-Life Dialog Scenarios</h3>
+                    <p class="why-desc">From cafes in Madrid to train stations in Tokyo, roleplay practical everyday
+                        situations with context.</p>
+                </div>
+            </div>
+
+            <div class="section-showcase-grid">
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_why_1.jpg" alt="Student practicing speaking with headphones"
+                            class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Interactive Practice</span>
+                        <h4 class="showcase-title">AI Spoken Feedback & Sentence Construction</h4>
+                        <p class="showcase-desc">Get instantaneous pitch and intonation guidance while speaking full
+                            conversational sentences.</p>
+                    </div>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_why_2.jpg" alt="Students in active speech practice"
+                            class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Phoneme Analysis</span>
+                        <h4 class="showcase-title">Acoustic Pitch Contour & Precision Feedback</h4>
+                        <p class="showcase-desc">Visual spectrum charts highlight vowel clarity and stress placement for
+                            authentic native speech flow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-Section 1.3: Community & Social Proof -->
+    <section class="community-section" id="community-proof">
+        <div class="container">
+            <div class="section-header" style="color:var(--color-surface);">
+                <div class="badge badge-dark">Learner Community</div>
+                <h2 class="section-title" style="color:var(--color-surface);">Loved By Over 250,000+ Learners</h2>
+                <p class="section-desc" style="color:#A0A59E;">See how everyday speakers built real speaking confidence
+                    with WeTalksy.</p>
+            </div>
+
+            <div class="community-grid">
+                <div class="community-card">
+                    <p class="community-quote">"After 3 weeks on WeTalksy, I ordered tapas in Barcelona without
+                        hesitating once. The audio feedback is incredible!"</p>
+                    <div class="community-user">
+                        <img src="assets/images/user_sarah.jpg" alt="Sarah M." class="user-avatar-img">
+                        <div class="user-info">
+                            <strong>Sarah M.</strong>
+                            <span>Learned Spanish in 60 Days</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="community-card">
+                    <p class="community-quote">"The real conversation simulator feels so natural. I finally stopped
+                        worrying about accent mistakes."</p>
+                    <div class="community-user">
+                        <img src="assets/images/user_julian.jpg" alt="Julian K." class="user-avatar-img">
+                        <div class="user-info">
+                            <strong>Julian K.</strong>
+                            <span>Learned French B2 Level</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="community-card">
+                    <p class="community-quote">"I love the daily flashcards combined with speech synthesis. Best
+                        platform for active speaking practice!"</p>
+                    <div class="community-user">
+                        <img src="assets/images/user_elena.jpg" alt="Elena R." class="user-avatar-img">
+                        <div class="user-info">
+                            <strong>Elena R.</strong>
+                            <span>Learned German & Japanese</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       MENU 2: LEARN (3 Sub-Sections: 1. Languages, 2. 4 Pillars, 3. Curriculum Levels)
+       ========================================================================== -->
+    <section class="languages-section" id="learn">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge badge-coral">Language Paths</div>
+                <h2 class="section-title">Popular Languages Selection</h2>
+                <p class="section-desc">Select your target language below to instantly update the interactive practice
+                    tools across the site.</p>
+            </div>
+
+            <div class="lang-grid">
+                <div class="lang-card active" data-lang-code="es">
+                    <div class="lang-card-img-wrap">
+                        <img src="assets/images/loc_spanish.jpg" alt="Spain Landmark - Madrid & Barcelona"
+                            class="lang-card-img">
+                    </div>
+                    <div class="lang-card-content">
+                        <div class="lang-name">Spanish</div>
+                        <div class="lang-native">Español</div>
+                    </div>
+                </div>
+                <div class="lang-card" data-lang-code="en">
+                    <div class="lang-card-img-wrap">
+                        <img src="assets/images/loc_english.jpg" alt="UK Landmark - London Big Ben"
+                            class="lang-card-img">
+                    </div>
+                    <div class="lang-card-content">
+                        <div class="lang-name">English</div>
+                        <div class="lang-native">English</div>
+                    </div>
+                </div>
+                <div class="lang-card" data-lang-code="fr">
+                    <div class="lang-card-img-wrap">
+                        <img src="assets/images/loc_french.jpg" alt="France Landmark - Paris Eiffel Tower"
+                            class="lang-card-img">
+                    </div>
+                    <div class="lang-card-content">
+                        <div class="lang-name">French</div>
+                        <div class="lang-native">Français</div>
+                    </div>
+                </div>
+                <div class="lang-card" data-lang-code="de">
+                    <div class="lang-card-img-wrap">
+                        <img src="assets/images/loc_german.jpg" alt="Germany Landmark - Berlin Brandenburg Gate"
+                            class="lang-card-img">
+                    </div>
+                    <div class="lang-card-content">
+                        <div class="lang-name">German</div>
+                        <div class="lang-native">Deutsch</div>
+                    </div>
+                </div>
+                <div class="lang-card" data-lang-code="ja">
+                    <div class="lang-card-img-wrap">
+                        <img src="assets/images/loc_japanese.jpg" alt="Japan Landmark - Mount Fuji & Kyoto"
+                            class="lang-card-img">
+                    </div>
+                    <div class="lang-card-content">
+                        <div class="lang-name">Japanese</div>
+                        <div class="lang-native">日本語</div>
+                    </div>
+                </div>
+                <div class="lang-card" data-lang-code="ko">
+                    <div class="lang-card-img-wrap">
+                        <img src="assets/images/loc_korean.jpg" alt="Korea Landmark - Seoul Palace"
+                            class="lang-card-img">
+                    </div>
+                    <div class="lang-card-content">
+                        <div class="lang-name">Korean</div>
+                        <div class="lang-native">한국어</div>
+                    </div>
+                </div>
+                <div class="lang-card" data-lang-code="it">
+                    <div class="lang-card-img-wrap">
+                        <img src="assets/images/loc_italian.jpg" alt="Italy Landmark - Rome Colosseum"
+                            class="lang-card-img">
+                    </div>
+                    <div class="lang-card-content">
+                        <div class="lang-name">Italian</div>
+                        <div class="lang-native">Italiano</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-Section 2.2: 4 Learning Modes / Pillars -->
+    <section class="modes-section" id="learning-pillars">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">Core Methodology</div>
+                <h2 class="section-title">How You Learn On WeTalksy</h2>
+                <p class="section-desc">Designed for real-world speech retention, active recall, and spontaneous
+                    conversation skills.</p>
+            </div>
+
+            <div class="modes-grid">
+                <div class="mode-card">
+                    <div class="mode-icon-box">📚</div>
+                    <h3 class="mode-title">Vocabulary</h3>
+                    <p class="mode-desc">Build useful, context-rich vocabulary through quick interactive flashcards &
+                        spaced repetition memory tests.</p>
+                    <div class="mode-tag">⚡ Spaced Memory Cards</div>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon-box">🎙️</div>
+                    <h3 class="mode-title">Speaking</h3>
+                    <p class="mode-desc">Practice speaking naturally without hesitation. Build muscle memory through
+                        guided sentence production.</p>
+                    <div class="mode-tag">🗣️ Live Acoustic Feedback</div>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon-box">🎯</div>
+                    <h3 class="mode-title">Pronunciation</h3>
+                    <p class="mode-desc">Get instant phoneme-level scoring on pitch contour, stress accents, and speech
+                        clarity with visual feedback.</p>
+                    <div class="mode-tag">📊 Score Analysis</div>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon-box">💬</div>
+                    <h3 class="mode-title">Conversations</h3>
+                    <p class="mode-desc">Roleplay realistic everyday conversations from ordering coffee in Paris to
+                        booking a train in Tokyo.</p>
+                    <div class="mode-tag">✨ Real-Life Scenarios</div>
+                </div>
+            </div>
+
+            <div class="section-showcase-grid">
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_learn_1.jpg"
+                            alt="Student practicing with interactive learning deck" class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Memory Decks</span>
+                        <h4 class="showcase-title">Interactive Flashcard Learning Decks</h4>
+                        <p class="showcase-desc">Master thousands of essential phrases with spaced repetition memory
+                            systems and native speaker audio clips.</p>
+                    </div>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_learn_2.jpg"
+                            alt="Students celebrating course completion milestone" class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Curriculum Roadmap</span>
+                        <h4 class="showcase-title">Structured A1 to C2 Fluency Pathways</h4>
+                        <p class="showcase-desc">Follow step-by-step guided milestones tailored for beginner learners
+                            through advanced native speech fluency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-Section 2.3: Level Roadmap & Curriculum -->
+    <section class="curriculum-section" id="curriculum-levels">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">Structured Progress</div>
+                <h2 class="section-title">Curriculum & CEFR Skill Levels</h2>
+                <p class="section-desc">Follow a clear, step-by-step roadmap from beginner phrases to fluent
+                    conversational mastery.</p>
+            </div>
+
+            <div class="roadmap-grid">
+                <div class="roadmap-card">
+                    <div class="roadmap-level-badge">Level A1 • Beginner</div>
+                    <h3 class="roadmap-title">First Words & Essentials</h3>
+                    <p class="roadmap-desc">Greetings, ordering food, numbers, basic directions, and fundamental
+                        pronunciation patterns.</p>
+                </div>
+                <div class="roadmap-card">
+                    <div class="roadmap-level-badge">Level A2 • Elementary</div>
+                    <h3 class="roadmap-title">Daily Conversations</h3>
+                    <p class="roadmap-desc">Shopping, travel logistics, asking for help, describing daily routines, and
+                        past experiences.</p>
+                </div>
+                <div class="roadmap-card">
+                    <div class="roadmap-level-badge">Level B1 • Intermediate</div>
+                    <h3 class="roadmap-title">Fluency & Expressiveness</h3>
+                    <p class="roadmap-desc">Sharing opinions, storytelling, workplace scenarios, handling unexpected
+                        travel situations.</p>
+                </div>
+                <div class="roadmap-card">
+                    <div class="roadmap-level-badge">Level B2+ • Advanced</div>
+                    <h3 class="roadmap-title">Native Scenario Mastery</h3>
+                    <p class="roadmap-desc">Nuanced idioms, cultural humor, fast conversational dialogue flow, and
+                        complex debates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       MENU 3: PRACTICE (3 Sub-Sections: 1. Sandbox, 2. Phoneme Feedback, 3. Daily Workout)
+       ========================================================================== -->
+    <section class="practice-section" id="practice">
+        <div class="container">
+            <div class="section-header" style="color:var(--color-surface);">
+                <div class="badge badge-dark">Interactive Sandbox</div>
+                <h2 class="section-title" style="color:var(--color-surface);">Vocabulary & Voice Practice</h2>
+                <p class="section-desc" style="color:#A0A59E;">Try the interactive voice engine right now. Listen to
+                    native speech and test your pronunciation.</p>
+            </div>
+
+            <div class="practice-wrapper">
+                <div class="practice-header">
+                    <div class="practice-step-indicator">
+                        <span>Card <strong id="currentCardIndex">1</strong> of 5</span>
+                    </div>
+                    <div style="color:#A0A59E; font-size:0.85rem;" id="activeLangLabel">
+                        Active: 🇪🇸 Spanish
+                    </div>
+                </div>
+
+                <div class="practice-card-box" id="practiceCardBox">
+                    <div class="practice-word" id="practiceWord">Me gustaría un café</div>
+                    <div class="practice-phonetic" id="practicePhonetic">/me ɡus.taˈɾi.a un kaˈfe/</div>
+                    <div class="practice-meaning" id="practiceMeaning">"I would like a coffee"</div>
+
+                    <!-- Mic Waveform Canvas Visualizer -->
+                    <div class="mic-canvas-wrapper">
+                        <canvas id="waveformCanvas"></canvas>
+                    </div>
+
+                    <div class="practice-actions-row">
+                        <button class="action-btn-large btn-listen" id="btnPracticeListen"
+                            title="Listen to Native Audio">
+                            🔊
+                        </button>
+                        <button class="action-btn-large btn-mic" id="btnPracticeMic" title="Hold/Tap to Speak">
+                            🎙️
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pronunciation-result-bar" id="resultBar">
+                    <div>
+                        <span style="font-size:1.2rem;">✨</span>
+                        <span>Pronunciation Score: <strong id="scoreVal">96% - Excellent Accent!</strong></span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" id="btnNextCard">Next Practice Card →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-Section 3.2: Acoustic Phoneme Analysis -->
+    <section class="phoneme-section" id="phoneme-training">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge badge-coral">Accent Precision</div>
+                <h2 class="section-title">Acoustic Accent & Phoneme Analysis</h2>
+                <p class="section-desc">WeTalksy analyzes acoustic properties to give you targeted coaching on specific
+                    sounds.</p>
+            </div>
+
+            <div class="phoneme-grid">
+                <div class="phoneme-card">
+                    <div class="phoneme-score-ring">98%</div>
+                    <h3 class="phoneme-title">Vowel Clarity</h3>
+                    <p class="phoneme-desc">Accurate formants for pure open vowels without diphthong slurring.</p>
+                </div>
+                <div class="phoneme-card">
+                    <div class="phoneme-score-ring">92%</div>
+                    <h3 class="phoneme-title">Pitch & Intonation</h3>
+                    <p class="phoneme-desc">Natural pitch contour matching native sentence cadence and question
+                        inflection.</p>
+                </div>
+                <div class="phoneme-card">
+                    <div class="phoneme-score-ring">95%</div>
+                    <h3 class="phoneme-title">Consonant Stress</h3>
+                    <p class="phoneme-desc">Crisp articulation of rolled /r/ and dental consonants in real speech.</p>
+                </div>
+            </div>
+
+            <div class="section-showcase-grid">
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_practice_1.jpg"
+                            alt="Person speaking into studio microphone with headphones" class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Voice Studio</span>
+                        <h4 class="showcase-title">Real-Time Voice Recognition & Mic Evaluation</h4>
+                        <p class="showcase-desc">Record your voice directly on any device and receive real-time accuracy
+                            scoring instantly.</p>
+                    </div>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_practice_2.jpg" alt="Digital audio wave analysis station"
+                            class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Accent Lab</span>
+                        <h4 class="showcase-title">Phoneme Accent Precision & Audio Wave Analysis</h4>
+                        <p class="showcase-desc">Compare your speech wave pattern directly against native accent models
+                            for perfect articulation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-Section 3.3: Daily Practice Workout Challenge -->
+    <section class="challenge-section" id="daily-challenge">
+        <div class="container">
+            <div class="challenge-banner">
+                <div>
+                    <div class="badge"
+                        style="background:var(--color-primary); color:var(--color-dark); margin-bottom:12px;">Daily
+                        Challenge</div>
+                    <h3 style="font-family:var(--font-display); font-size:1.8rem; font-weight:800; margin-bottom:8px;">
+                        Complete Today's 5-Minute Workout</h3>
+                    <p style="color:#A0A59E; max-width:500px;">Keep your 14-day streak active by practicing 10 new
+                        vocabulary cards today.</p>
+                </div>
+                <button class="btn btn-primary" onclick="alert('Starting Daily Workout Challenge!');">Start Workout
+                    🔥</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       MENU 4: TALK (3 Sub-Sections: 1. Chat Simulator, 2. AI Partners, 3. Speaking Clubs)
+       ========================================================================== -->
+    <section class="conversation-section" id="talk">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge badge-coral">Signature Feature</div>
+                <h2 class="section-title">Practice Real Conversations</h2>
+                <p class="section-desc">Experience real dialogue flow. Talk naturally with WeTalksy's intelligent
+                    scenario partners.</p>
+            </div>
+
+            <div class="chat-container-card">
+                <div class="chat-header-bar">
+                    <div class="chat-avatar-info">
+                        <div class="avatar-img">M</div>
+                        <div class="avatar-details">
+                            <strong id="avatarName">Mateo (Madrid, Spain)</strong>
+                            <span>Online • Ordering Tapas & Coffee</span>
+                        </div>
+                    </div>
+                    <div class="streak-pill"
+                        style="background:rgba(255,255,255,0.1); color:var(--color-primary); border-color:rgba(255,255,255,0.2);">
+                        Level: B1 Intermediate
+                    </div>
+                </div>
+
+                <div class="chat-feed" id="chatFeed">
+                    <div class="chat-bubble bot">
+                        <div class="chat-bubble-lang">SPANISH</div>
+                        ¡Hola! bienvenido al café. ¿Qué te gustaría pedir hoy?
+                        <div class="chat-bubble-translation">Hello! Welcome to the cafe. What would you like to order
+                            today?</div>
+                    </div>
+
+                    <div class="chat-bubble user">
+                        <div class="chat-bubble-lang">YOUR RESPONSE</div>
+                        Hola Mateo, me gustaría un café con leche y un croissant, por favor.
+                        <div class="chat-bubble-translation">Hello Mateo, I would like a coffee with milk and a
+                            croissant, please.</div>
+                    </div>
+
+                    <div class="chat-bubble bot">
+                        <div class="chat-bubble-lang">SPANISH</div>
+                        ¡Excelente elección! ¿Deseas el café caliente o con hielo?
+                        <div class="chat-bubble-translation">Excellent choice! Would you like the coffee hot or with
+                            ice?</div>
+                    </div>
+                </div>
+
+                <div class="chat-controls-bar">
+                    <div class="chat-suggestions">
+                        <button class="chip-suggestion" data-reply="Caliente, por favor.">☕ Caliente, por favor. (Hot,
+                            please.)</button>
+                        <button class="chip-suggestion" data-reply="Con hielo, ¡hace mucho calor!">🧊 Con hielo, ¡hace
+                            calor! (With ice!)</button>
+                        <button class="chip-suggestion" data-reply="¿Tienes leche de avena?">🥛 ¿Tienes leche de avena?
+                            (Oat milk?)</button>
+                    </div>
+
+                    <div class="chat-input-row">
+                        <input type="text" class="chat-input-field" id="chatInput"
+                            placeholder="Type or click a suggested response..." autocomplete="off">
+                        <button class="btn btn-primary" id="btnSendChat">Send & Speak</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-Section 4.2: Scenario Partners -->
+    <section class="partners-section" id="ai-partners">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">Native AI Avatars</div>
+                <h2 class="section-title">Scenario Conversation Partners</h2>
+                <p class="section-desc">Practice with diverse native accents across realistic life scenarios.</p>
+            </div>
+
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <img src="assets/images/partner_mateo.jpg" alt="Mateo - Native Spanish Speaker"
+                        class="partner-avatar-img">
+                    <h3 class="partner-name">Mateo</h3>
+                    <div class="partner-role">Castilian Spanish • Madrid Cafe Partner</div>
+                    <button class="btn btn-outline btn-sm" onclick="setLanguage('es'); location.href='#talk';">Practice
+                        Dialog →</button>
+                </div>
+                <div class="partner-card">
+                    <img src="assets/images/partner_camille.jpg" alt="Camille - Native French Speaker"
+                        class="partner-avatar-img">
+                    <h3 class="partner-name">Camille</h3>
+                    <div class="partner-role">Parisian French • Travel & Dining Guide</div>
+                    <button class="btn btn-outline btn-sm" onclick="setLanguage('fr'); location.href='#talk';">Practice
+                        Dialog →</button>
+                </div>
+                <div class="partner-card">
+                    <img src="assets/images/partner_ren.jpg" alt="Ren - Native Japanese Speaker"
+                        class="partner-avatar-img">
+                    <h3 class="partner-name">Ren</h3>
+                    <div class="partner-role">Tokyo Japanese • Train Station & Shopping</div>
+                    <button class="btn btn-outline btn-sm" onclick="setLanguage('ja'); location.href='#talk';">Practice
+                        Dialog →</button>
+                </div>
+            </div>
+
+            <div class="section-showcase-grid">
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_talk_1.jpg"
+                            alt="Multicultural student group in conversation exchange" class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Global Community</span>
+                        <h4 class="showcase-title">Peer Speaking Clubs & Native Partner Exchanges</h4>
+                        <p class="showcase-desc">Connect with over 250,000 active language learners worldwide for live
+                            group dialog practice.</p>
+                    </div>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_talk_2.jpg"
+                            alt="Student ordering coffee warmly in a cafe setting" class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Conversation AI</span>
+                        <h4 class="showcase-title">Immersive Cafe & Travel Roleplay Sessions</h4>
+                        <p class="showcase-desc">Roleplay real-world everyday scenarios with reactive conversation
+                            partners and instant context assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-Section 4.3: Speaking Clubs -->
+    <section class="clubs-section" id="talking-clubs">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge badge-coral">Live Practice</div>
+                <h2 class="section-title">WeTalksy Speaking Clubs</h2>
+                <p class="section-desc">Join small guided audio sessions with fellow language learners around the world.
+                </p>
+            </div>
+
+            <div class="clubs-grid">
+                <div class="club-card">
+                    <div class="club-time">Today • 18:00 UTC</div>
+                    <h3 class="club-title">Spanish Tapas & Culture Chat</h3>
+                    <p style="font-size:0.9rem; color:var(--color-muted); margin-bottom:16px;">Host: Mateo • 4 Seats
+                        Open</p>
+                    <button class="btn btn-dark btn-sm"
+                        onclick="alert('Reserved your seat for Spanish Tapas Chat!');">Reserve Seat</button>
+                </div>
+                <div class="club-card">
+                    <div class="club-time">Tomorrow • 15:00 UTC</div>
+                    <h3 class="club-title">French Cafe Conversation Practice</h3>
+                    <p style="font-size:0.9rem; color:var(--color-muted); margin-bottom:16px;">Host: Camille • 2 Seats
+                        Open</p>
+                    <button class="btn btn-dark btn-sm"
+                        onclick="alert('Reserved your seat for French Conversation Practice!');">Reserve Seat</button>
+                </div>
+                <div class="club-card">
+                    <div class="club-time">Thursday • 20:00 UTC</div>
+                    <h3 class="club-title">German Everyday Vocabulary Session</h3>
+                    <p style="font-size:0.9rem; color:var(--color-muted); margin-bottom:16px;">Host: Lukas • 5 Seats
+                        Open</p>
+                    <button class="btn btn-dark btn-sm"
+                        onclick="alert('Reserved your seat for German Session!');">Reserve Seat</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       MENU 5: PROGRESS (3 Sub-Sections: 1. Stats, 2. Badges, 3. Reports)
+       ========================================================================== -->
+    <section class="progress-section" id="progress">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">Fluency Mastery</div>
+                <h2 class="section-title">Track Your Fluency Growth</h2>
+                <p class="section-desc">Clear insights into your daily vocabulary growth, accent accuracy, and speaking
+                    time.</p>
+            </div>
+
+            <div class="progress-grid">
+                <div class="progress-card">
+                    <div class="progress-icon">📖</div>
+                    <div class="progress-value" id="statWords">1,280</div>
+                    <div class="progress-label">Words & Phrases Learned</div>
+                    <div class="progress-bar-outer">
+                        <div class="progress-bar-inner" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="progress-card">
+                    <div class="progress-icon">⏱️</div>
+                    <div class="progress-value" id="statTime">42h</div>
+                    <div class="progress-label">Speaking Practice Time</div>
+                    <div class="progress-bar-outer">
+                        <div class="progress-bar-inner" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="progress-card">
+                    <div class="progress-icon">🎯</div>
+                    <div class="progress-value" id="statScore">94%</div>
+                    <div class="progress-label">Average Pronunciation Score</div>
+                    <div class="progress-bar-outer">
+                        <div class="progress-bar-inner" style="width: 94%;"></div>
+                    </div>
+                </div>
+                <div class="progress-card">
+                    <div class="progress-icon">🔥</div>
+                    <div class="progress-value" id="statStreak">14</div>
+                    <div class="progress-label">Day Active Learning Streak</div>
+                    <div class="progress-bar-outer">
+                        <div class="progress-bar-inner" style="width: 100%; background:var(--color-accent);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-showcase-grid">
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_progress_1.jpg"
+                            alt="Student reviewing performance growth charts" class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Performance Tracking</span>
+                        <h4 class="showcase-title">Comprehensive Fluency & Accent Growth Charts</h4>
+                        <p class="showcase-desc">Track speaking minutes, vocabulary count, and accent precision over
+                            daily and weekly intervals.</p>
+                    </div>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_progress_2.jpg"
+                            alt="Students celebrating 14 day streak achievement" class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Milestone Rewards</span>
+                        <h4 class="showcase-title">Unlocked Achievement Badges & Streaks</h4>
+                        <p class="showcase-desc">Earn badges for daily learning streaks, pitch accuracy milestones, and
+                            vocabulary mastery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-Section 5.2: Achievement Badges -->
+    <section class="badges-section" id="achievements-milestones">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge badge-coral">Milestones</div>
+                <h2 class="section-title">Unlocked Achievements</h2>
+                <p class="section-desc">Earn badges as you practice speaking, expand your vocabulary, and build streaks.
+                </p>
+            </div>
+
+            <div class="badges-grid">
+                <div class="badge-item-card">
+                    <div class="badge-icon-wrap">🏆</div>
+                    <div class="badge-name">First Conversation</div>
+                    <div class="badge-sub">Completed cafe scenario</div>
+                </div>
+                <div class="badge-item-card">
+                    <div class="badge-icon-wrap">🔥</div>
+                    <div class="badge-name">Streak Master</div>
+                    <div class="badge-sub">14 consecutive days</div>
+                </div>
+                <div class="badge-item-card">
+                    <div class="badge-icon-wrap">🎯</div>
+                    <div class="badge-name">Native Accent</div>
+                    <div class="badge-sub">Scored 95%+ precision</div>
+                </div>
+                <div class="badge-item-card">
+                    <div class="badge-icon-wrap">🌟</div>
+                    <div class="badge-name">Vocab Collector</div>
+                    <div class="badge-sub">Mastered 1,000 words</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-Section 5.3: Weekly Reports -->
+    <section class="reports-section" id="weekly-reports">
+        <div class="container">
+            <div class="report-box">
+                <div>
+                    <div class="badge"
+                        style="background:var(--color-primary); color:var(--color-dark); margin-bottom:14px;">Weekly
+                        Analytics</div>
+                    <h3 style="font-family:var(--font-display); font-size:2rem; font-weight:800; margin-bottom:12px;">
+                        Get Detailed Weekly Fluency Reports</h3>
+                    <p style="color:#A0A59E; font-size:1.05rem;">WeTalksy automatically sends you breakdown reports
+                        detailing your pitch accuracy, vocabulary memory retention, and pronunciation progress.</p>
+                </div>
+                <div style="text-align:center;">
+                    <div style="font-size:3rem; margin-bottom:10px;">📊</div>
+                    <button class="btn btn-primary"
+                        onclick="if(window.registerOngoingAction) window.registerOngoingAction('progress'); alert('Weekly Reports are active for your account!');">Enable
+                        Email Reports</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       MENU 6: CONTACT (3 Sub-Sections: 1. Contact Info, 2. Form, 3. FAQ Accordion)
+       ========================================================================== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">Get In Touch</div>
+                <h2 class="section-title">Contact & Support Center</h2>
+                <p class="section-desc">Have questions about WeTalksy, business partnerships, or subscription plans?
+                    We're here to help.</p>
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- Contact Info Cards -->
+                <div class="contact-info-column" id="contact-info">
+                    <div class="contact-info-card">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <div class="contact-card-title">Support Email</div>
+                            <div class="contact-card-text">hello@wetalksy.com</div>
+                            <div style="font-size:0.8rem; color:var(--color-primary); font-weight:700; margin-top:4px;">
+                                Response time: &lt; 2 Hours</div>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <div class="contact-card-title">Global Headquarters</div>
+                            <div class="contact-card-text">WeTalksy Education Inc.<br>548 Market Street, Suite
+                                900<br>San Francisco, CA 94104</div>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon">💬</div>
+                        <div>
+                            <div class="contact-card-title">Community & Support Hours</div>
+                            <div class="contact-card-text">Monday – Sunday: 24/7 Global Community Chat & Assistance
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Message Form -->
+                <div class="contact-form-card" id="contact-form-sec">
+                    <h3 class="contact-form-title">Send Us A Message</h3>
+                    <p style="color:var(--color-muted); font-size:0.9rem; margin-bottom:24px;">Fill out the form below
+                        and our team will get back to you immediately.</p>
+
+                    <form id="contactForm">
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" class="form-input" placeholder="Alex Johnson" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-input" placeholder="alex@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Inquiry Topic</label>
+                            <select class="form-select" required>
+                                <option value="">Select a topic...</option>
+                                <option value="learning">Language Learning Assistance</option>
+                                <option value="technical">Technical & Audio Feedback Question</option>
+                                <option value="partnership">Business & Schools Partnership</option>
+                                <option value="billing">Subscription & Pricing</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Your Message</label>
+                            <textarea class="form-textarea" rows="4"
+                                placeholder="How can we help you learn languages faster?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message →</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="section-showcase-grid">
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_contact_1.jpg"
+                            alt="Friendly learner support desk representative" class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Global Assistance</span>
+                        <h4 class="showcase-title">24/7 Dedicated Learner Support Desk</h4>
+                        <p class="showcase-desc">Our international language education team is available 24/7 to resolve
+                            account & audio setup questions.</p>
+                    </div>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/images/showcase_contact_2.jpg" alt="Language educator guiding student"
+                            class="showcase-img">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-tag">Knowledge Base</span>
+                        <h4 class="showcase-title">Comprehensive Onboarding & Help Hub</h4>
+                        <p class="showcase-desc">Browse detailed setup guides, microphone calibration tips, and speech
+                            recognition FAQs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-Section 6.3: Frequently Asked Questions (FAQ) Accordion -->
+    <section class="faq-section" id="contact-faq">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge badge-coral">Common Questions</div>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Quick answers to common questions about practicing speaking with WeTalksy.</p>
+            </div>
+
+            <div class="faq-wrapper">
+                <div class="faq-item open">
+                    <div class="faq-header">
+                        <span>How does WeTalksy help me practice speaking instead of just memorizing?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        WeTalksy incorporates immediate audio playback, phoneme-level acoustic scoring, and real-life
+                        scenario dialogs. Rather than matching static text choices, you listen to native speech and
+                        speak back in complete sentences.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span>Can I practice if I am a complete beginner (A1 Level)?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        Yes! WeTalksy starts with essential greetings, phonetic guides, and slow native pronunciation
+                        playback, allowing beginners to build confidence gradually.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span>What languages are supported on WeTalksy?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        We currently support Spanish, English, French, German, Japanese, Korean, and Italian, with more
+                        languages being added regularly.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span>Is there a free trial available?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        Yes, you can try WeTalksy for free today! Click "Start Learning" anywhere on the page to
+                        register your free account.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       FINAL CTA SECTION
+       ========================================================================== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <h2 class="cta-title">Start Speaking Your New Language Today</h2>
+                <p class="cta-desc">Join thousands of language learners building real speaking confidence with WeTalksy.
+                </p>
+                <form class="cta-form" id="ctaForm"
+                    onsubmit="event.preventDefault(); alert('Welcome to WeTalksy! Check your email to start.');">
+                    <input type="email" class="cta-input" placeholder="Enter your email address..." required>
+                    <button type="submit" class="btn btn-primary">Start Learning Free</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top-grid">
+
+                <!-- Col 1: Modern Brand & SVG Socials -->
+                <div class="footer-brand-col">
+                    <a href="#home" class="footer-logo" aria-label="WeTalksy Homepage">
+                        <img src="assets/images/logo.png" alt="WeTalksy Logo">
+                    </a>
+                    <p class="footer-tagline">Learn languages by speaking naturally with real-time voice feedback.</p>
+
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="Twitter / X" onclick="event.preventDefault();">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram" onclick="event.preventDefault();">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube" onclick="event.preventDefault();">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Discord" onclick="event.preventDefault();">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div class="footer-links-col">
+                    <h4 class="footer-col-title">Explore</h4>
+                    <ul class="footer-link-list">
+                        <li><a href="#learn">Learn</a></li>
+                        <li><a href="#practice">Practice</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Links (EXACTLY 2 LINKS) -->
+                <div class="footer-links-col">
+                    <h4 class="footer-col-title">Quick Links</h4>
+                    <ul class="footer-link-list">
+                        <li><a href="#" onclick="alert('Viewing Privacy Policy'); return false;">Privacy Policy</a></li>
+                        <li><a href="#" onclick="alert('Viewing Terms of Service'); return false;">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Newsletter -->
+                <div class="footer-newsletter-col">
+                    <h4 class="footer-col-title">Newsletter</h4>
+                    <p class="footer-newsletter-desc">Get weekly speaking tips and scenario releases.</p>
+                    <form class="footer-newsletter-form"
+                        onsubmit="event.preventDefault(); alert('Subscribed to WeTalksy Newsletter!'); this.reset();">
+                        <input type="email" class="footer-newsletter-input" placeholder="Your email..." required>
+                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom-bar">
+                <div>© 2026 WeTalksy Platform. All rights reserved.</div>
+                <div style="font-size:0.85rem; color:#7E837C;">Designed for Spoken Fluency</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top" id="btnBackToTop" aria-label="Back to Top">↑</button>
+
+    <!-- ==========================================================================
+       MODAL 1: SIGN IN / LOGIN POPUP
+       ========================================================================== -->
+    <div class="modal-overlay" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
+        <div class="modal-content">
+            <span class="modal-close" id="btnCloseLoginModal" aria-label="Close modal">&times;</span>
+            <div class="modal-badge">
+                <span>🔐</span> Welcome Back
+            </div>
+            <h3 class="modal-title" id="loginModalTitle">Sign In to WeTalksy</h3>
+            <p class="modal-subtitle">Continue your speaking practice and track your progress.</p>
+
+            <!-- Social Login Buttons -->
+            <div class="social-login-group">
+                <button type="button" class="btn-social-login" onclick="alert('Google Sign-In initialized');">
+                    <svg width="18" height="18" viewBox="0 0 24 24">
+                        <path fill="#EA4335"
+                            d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z" />
+                        <path fill="#4285F4"
+                            d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z" />
+                        <path fill="#FBBC05"
+                            d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 10.8 0 12.5s.7 2.8 1.9 5.2l3.7-2.9z" />
+                        <path fill="#34A853"
+                            d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16C3.7 19.7 7.5 23 12 23z" />
+                    </svg>
+                    <span>Continue with Google</span>
+                </button>
+                <button type="button" class="btn-social-login" onclick="alert('Apple Sign-In initialized');">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.67-.82 1.13-1.96.99-3.12-1 .04-2.22.67-2.92 1.49-.62.71-1.17 1.87-1.01 3.01 1.12.09 2.27-.56 2.94-1.38z" />
+                    </svg>
+                    <span>Continue with Apple</span>
+                </button>
+            </div>
+
+            <div class="modal-divider">
+                <span>or sign in with email</span>
+            </div>
+
+            <form id="loginForm"
+                onsubmit="event.preventDefault(); alert('Signed in successfully to WeTalksy!'); document.getElementById('loginModal').classList.remove('active');">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" placeholder="alex@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="password-field-wrapper">
+                        <input type="password" id="loginPasswordInput" class="form-input password-input"
+                            placeholder="••••••••" required>
+                        <button type="button" class="btn-toggle-password" data-target="loginPasswordInput"
+                            title="Toggle Password Visibility" aria-label="Toggle Password Visibility">
+                            <span class="eye-icon">👁️</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options-row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked>
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="form-link"
+                        onclick="alert('Password reset instructions sent to your email.'); return false;">Forgot
+                        Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" style="margin-top:16px;">Sign In</button>
+            </form>
+
+            <div class="modal-footer-switcher">
+                Don't have an account? <a href="#" id="linkOpenSignup">Sign Up Free</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       MODAL 2: SIGN UP / START LEARNING POPUP
+       ========================================================================== -->
+    <div class="modal-overlay" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="signupModalTitle">
+        <div class="modal-content">
+            <span class="modal-close" id="btnCloseSignupModal" aria-label="Close modal">&times;</span>
+            <div class="modal-badge badge-coral-light">
+                <span>🚀</span> Start Learning
+            </div>
+            <h3 class="modal-title" id="signupModalTitle">Create Your Free Account</h3>
+            <p class="modal-subtitle">Start speaking fluently with interactive lessons & voice AI.</p>
+
+            <!-- Social Signup Buttons -->
+            <div class="social-login-group">
+                <button type="button" class="btn-social-login" onclick="alert('Google Sign-Up initialized');">
+                    <svg width="18" height="18" viewBox="0 0 24 24">
+                        <path fill="#EA4335"
+                            d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z" />
+                        <path fill="#4285F4"
+                            d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z" />
+                        <path fill="#FBBC05"
+                            d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 10.8 0 12.5s.7 2.8 1.9 5.2l3.7-2.9z" />
+                        <path fill="#34A853"
+                            d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16C3.7 19.7 7.5 23 12 23z" />
+                    </svg>
+                    <span>Sign up with Google</span>
+                </button>
+                <button type="button" class="btn-social-login" onclick="alert('Apple Sign-Up initialized');">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.67-.82 1.13-1.96.99-3.12-1 .04-2.22.67-2.92 1.49-.62.71-1.17 1.87-1.01 3.01 1.12.09 2.27-.56 2.94-1.38z" />
+                    </svg>
+                    <span>Sign up with Apple</span>
+                </button>
+            </div>
+
+            <div class="modal-divider">
+                <span>or sign up with email</span>
+            </div>
+
+            <form id="signupForm"
+                onsubmit="event.preventDefault(); alert('Account created successfully! Welcome to WeTalksy.'); document.getElementById('signupModal').classList.remove('active');">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" placeholder="Alex Johnson" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" placeholder="alex@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="password-field-wrapper">
+                        <input type="password" id="signupPasswordInput" class="form-input password-input"
+                            placeholder="Create a strong password" required minlength="6">
+                        <button type="button" class="btn-toggle-password" data-target="signupPasswordInput"
+                            title="Toggle Password Visibility" aria-label="Toggle Password Visibility">
+                            <span class="eye-icon">👁️</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top:12px;">
+                    <label class="checkbox-label" style="align-items: flex-start;">
+                        <input type="checkbox" required style="margin-top: 3px;">
+                        <span>I agree to WeTalksy's <a href="#" class="form-link"
+                                onclick="alert('Viewing Terms & Conditions'); return false;">Terms & Conditions</a> and
+                            <a href="#" class="form-link"
+                                onclick="alert('Viewing Privacy Policy'); return false;">Privacy Policy</a>.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" style="margin-top:16px;">Create Free
+                    Account</button>
+            </form>
+
+            <div class="modal-footer-switcher">
+                Already have an account? <a href="#" id="linkOpenLogin">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Integrations -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

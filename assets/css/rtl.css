@@ -1,0 +1,34 @@
+/* ==========================================================================
+   WeTalksy - Right-To-Left (RTL) Support
+   ========================================================================== */
+
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .hero-title span.highlight {
+    background-position: 100% 88%;
+}
+
+[dir="rtl"] .chat-bubble.bot {
+    align-self: flex-end;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 4px;
+}
+
+[dir="rtl"] .chat-bubble.user {
+    align-self: flex-start;
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 4px;
+}
+
+[dir="rtl"] .hero-floating-badge.badge-top-left {
+    left: auto;
+    right: -20px;
+}
+
+[dir="rtl"] .modal-close {
+    right: auto;
+    left: 20px;
+}

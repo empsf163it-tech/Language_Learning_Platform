@@ -1,0 +1,67 @@
+/* ==========================================================================
+   WeTalksy - Dark Mode Theme Overrides
+   ========================================================================== */
+
+[data-theme="dark"] {
+    --color-bg: #121413;
+    --color-surface: #1C201D;
+    --color-text: #F7F7F2;
+    --color-muted: #9BA098;
+    --color-border: #2A2F2C;
+
+    .site-header {
+        background: rgba(18, 20, 19, 0.85);
+        border-bottom-color: var(--color-border);
+    }
+
+    .site-header.scrolled {
+        background: rgba(28, 32, 29, 0.95);
+    }
+
+    .brand-logo {
+        color: var(--color-surface);
+    }
+
+    .nav-link {
+        color: #D2D6D0;
+    }
+
+    .nav-link:hover {
+        color: var(--color-primary);
+    }
+
+    .lang-card {
+        background: #181C19;
+    }
+
+    .mode-card {
+        background: #1C201D;
+    }
+
+    .mode-title {
+        color: var(--color-surface);
+    }
+
+    .progress-card {
+        background: #1C201D;
+    }
+
+    .progress-value {
+        color: var(--color-surface);
+    }
+
+    .modal-content {
+        background: #1C201D;
+        color: var(--color-surface);
+    }
+
+    .modal-title {
+        color: var(--color-surface);
+    }
+
+    .form-input {
+        background: #121413;
+        border-color: var(--color-border);
+        color: var(--color-surface);
+    }
+}
