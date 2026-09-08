@@ -214,6 +214,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Signup Form Confirm Password Validation
+    const signupForm = document.getElementById('signupForm');
+    const signupPasswordInput = document.getElementById('signupPasswordInput');
+    const signupConfirmPasswordInput = document.getElementById('signupConfirmPasswordInput');
+    const signupPasswordError = document.getElementById('signupPasswordError');
+
+    if (signupForm) {
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (signupPasswordInput && signupConfirmPasswordInput) {
+                if (signupPasswordInput.value !== signupConfirmPasswordInput.value) {
+                    if (signupPasswordError) signupPasswordError.style.display = 'block';
+                    signupConfirmPasswordInput.focus();
+                    return false;
+                } else {
+                    if (signupPasswordError) signupPasswordError.style.display = 'none';
+                }
+            }
+            alert('Account created successfully! Welcome to WeTalksy.');
+            if (signupModal) signupModal.classList.remove('active');
+            signupForm.reset();
+        });
+
+        if (signupConfirmPasswordInput) {
+            signupConfirmPasswordInput.addEventListener('input', () => {
+                if (signupPasswordError && signupPasswordInput) {
+                    if (signupPasswordInput.value === signupConfirmPasswordInput.value) {
+                        signupPasswordError.style.display = 'none';
+                    }
+                }
+            });
+        }
+    }
+
     /* ----------------------------------------------------------------------
        4. LANGUAGE SELECTION DATA & DYNAMIC ENGINE
        ---------------------------------------------------------------------- */
