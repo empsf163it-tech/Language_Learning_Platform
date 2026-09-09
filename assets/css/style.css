@@ -610,7 +610,6 @@ img {
 
 .showcase-img-wrap {
     width: 100%;
-    height: 240px;
     aspect-ratio: 16 / 9;
     overflow: hidden;
     position: relative;
@@ -621,6 +620,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 20%;
     transition: transform var(--transition-smooth);
 }
 
@@ -1780,11 +1780,17 @@ canvas#waveformCanvas {
         font-size: 0.95rem;
     }
 
-    /* Force 1-column layout on all grids in tablet/mobile mode (<= 1098px) */
+    /* Force 1-column layout on all grids in tablet/mobile mode (<= 1098px) except showcase cards grid */
     .hero-grid, .why-grid, .modes-grid, .roadmap-grid, .curriculum-section .roadmap-grid, 
     .phoneme-grid, .partners-grid, .clubs-grid, .contact-grid, .badges-grid, 
-    .community-grid, .footer-top-grid, .section-showcase-grid {
+    .community-grid, .footer-top-grid {
         grid-template-columns: 1fr !important;
+    }
+
+    /* Keep Showcase Cards in 2 columns on tablet screens for balanced layout & uncropped images */
+    .section-showcase-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
     }
 
     .hero-grid {
@@ -1988,6 +1994,13 @@ canvas#waveformCanvas {
         width: 42px;
         height: 42px;
         font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .section-showcase-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
     }
 }
 
